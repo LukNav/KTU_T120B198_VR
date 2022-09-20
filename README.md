@@ -1,1 +1,3 @@
-# T120B198_Virtual-Reality-Technologies
+# Virtual reality game for University module:
+
+KTU T120B198 Virtualiosios realybės technologijos
