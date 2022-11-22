@@ -3,7 +3,42 @@ guid: 71974dc0af7d58a45843410ebc46980c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BluePath.002
+    second: {fileID: 2100000, guid: 3a70e5ac2823512479a88a92b5017eb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor.002
+    second: {fileID: 2100000, guid: a250cb0a9ad58ba459189407632b3f14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RedPath.002
+    second: {fileID: 2100000, guid: f2015541a833c634a9bca95bb6482f21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall1.002
+    second: {fileID: 2100000, guid: 9f02e9823fead9f4786712e95be9d8d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: YellowPath.002
+    second: {fileID: 2100000, guid: 17bb52a79abc0804792c725d56728fa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sky.002
+    second: {fileID: 2100000, guid: 5acd4d0f5a3c1f842944aee4b73f1e8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skybox.002
+    second: {fileID: 2100000, guid: c5de276a686cc7a4b834ec8ced597a9a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

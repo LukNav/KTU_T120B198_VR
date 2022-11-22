@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
             {
                 return;
             }
-            if (Math.Abs(gameObject.transform.position.x - waypoints[currentWaypoint].transform.position.x) < 3 && Math.Abs(gameObject.transform.position.y - waypoints[currentWaypoint].transform.position.y) < 3)
+            if (Math.Abs(gameObject.transform.position.x - waypoints[currentWaypoint].transform.position.x) < 3 && Math.Abs(gameObject.transform.position.z - waypoints[currentWaypoint].transform.position.z) < 3)
             {
                 Debug.Log($"Current waypoint is {currentWaypoint}");
                 currentWaypoint++;
