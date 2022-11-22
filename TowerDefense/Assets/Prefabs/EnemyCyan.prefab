@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1407147909576868690}
   - component: {fileID: 1407147909576868688}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: EnemyCyan
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788994d69197fcf4eaff47a280a95a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 5
-  moveSpeed: 100
+  enemyHealth: 50
+  moveSpeed: 8
   waypoints:
   - {fileID: 2912694376007362306, guid: fcf43d735fb7c31449bdde7cd0f33d11, type: 3}
   - {fileID: 2262481441693448853, guid: e2546eefaade1b8479d235042fc6b5f8, type: 3}

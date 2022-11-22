@@ -7,23 +7,22 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField]
     [Min(5)]
-    int enemyHealth;
+    private float enemyHealth;
     [SerializeField]
     [Min(5)]
-    int moveSpeed;
+    private int moveSpeed;
     Rigidbody rb;
     [SerializeField]
     GameObject[] waypoints;
-    int currentWaypoint = 0;
+    private int currentWaypoint = 0;
     float lastTime = 0;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //Debug.Log("move forward");
         lastTime += Time.deltaTime;
@@ -49,7 +48,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bullet")
         {
-            enemyHealth--;
+            enemyHealth -= collision.gameObject.GetComponent<Bullet>().Damage;
             if(enemyHealth <= 0)
             {
                 Death();

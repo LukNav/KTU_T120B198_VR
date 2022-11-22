@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788994d69197fcf4eaff47a280a95a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 5
+  enemyHealth: 50
   moveSpeed: 100
   waypoints:
   - {fileID: 3102841157364451539, guid: 00b4a72f3bb201c4a833b77a29b05391, type: 3}

@@ -1,35 +1,42 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class DefendObject : MonoBehaviour
 {
     [SerializeField]
-    int gameOverEnemies;
-    [SerializeField]
-    int currentEnemies;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private TMP_Text gameOverText;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private TMP_Text healthText;
+
+    [SerializeField]
+    [Min(0)]
+    private int health;
+
+    private void UpdateHealth()
     {
-        
+        healthText.text = "Bomb health: " + health;
+    }
+    private void Awake()
+    {
+        gameOverText.enabled = false;
+        UpdateHealth();
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Enemy"))
         {
-            currentEnemies++;
-            Debug.Log("destroyed enemy xd");
+            health--;
+            UpdateHealth();
             Destroy(other.gameObject);
         }
-        if(currentEnemies >= gameOverEnemies)
+        if(health <= 0)
         {
+            gameOverText.enabled = true;
             Time.timeScale = 0;
         }
     }
