@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1407147909576868690}
   - component: {fileID: 1407147909576868688}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: EnemyRed
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,8 +132,11 @@ MonoBehaviour:
   enemyHealth: 5
   moveSpeed: 30
   waypoints:
-  - {fileID: 2912694376007362306, guid: fcf43d735fb7c31449bdde7cd0f33d11, type: 3}
-  - {fileID: 2262481441693448853, guid: e2546eefaade1b8479d235042fc6b5f8, type: 3}
-  - {fileID: 8275612792759105832, guid: a2c65eecc47e3044b8f1835c328a21b9, type: 3}
-  - {fileID: 5892661488709879025, guid: c02d77b133141d4408615605ca69b834, type: 3}
-  - {fileID: 125802754011418430, guid: df4ac507ee7edac4ab8ea4f9a30cd0b1, type: 3}
+  - {fileID: 7507105183393420095, guid: dcce385be3a089841be7b1a769a073d3, type: 3}
+  - {fileID: 5758488458832475792, guid: 2bd56a9b318262f4da320f853f471f1f, type: 3}
+  - {fileID: 2390278072687959812, guid: 44d1725f46ef52349b17ce26bcb0cfa5, type: 3}
+  - {fileID: 8285832615244273707, guid: fc79d28def33ddc44ae5c57a33e06651, type: 3}
+  - {fileID: 2922738865292321406, guid: 5e788a2e2f2297440aeedefa89cf0f86, type: 3}
+  - {fileID: 3172283021461468266, guid: ec68c84e276ffee42a1de9d47ade3264, type: 3}
+  - {fileID: 1811329365210051403, guid: 8a8305d8503f32d4dad449a6a9468e19, type: 3}
+  - {fileID: 812376586543727796, guid: 2ecfd2acb4baee444ac948e88b379461, type: 3}

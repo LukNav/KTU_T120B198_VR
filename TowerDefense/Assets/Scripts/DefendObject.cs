@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,10 +22,11 @@ public class DefendObject : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy")
+        if(other.CompareTag("Enemy"))
         {
             currentEnemies++;
-            Destroy(other);
+            Debug.Log("destroyed enemy xd");
+            Destroy(other.gameObject);
         }
         if(currentEnemies >= gameOverEnemies)
         {
