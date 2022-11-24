@@ -3,7 +3,17 @@ guid: a660233565ba3c2488668da03a5b65fd
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Big
+    second: {fileID: 2100000, guid: 566b01637428adb41bb1e665cea8f567, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: big glow
+    second: {fileID: 2100000, guid: 8dc3f33a36fdfb441bea74e2cbf420ea, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

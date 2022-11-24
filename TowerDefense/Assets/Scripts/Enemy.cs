@@ -36,8 +36,8 @@ public class Enemy : MonoBehaviour
         if (waypoints.Length > 0)
         {
             Vector3 pos = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, moveSpeed * Time.deltaTime);
-            rb.MovePosition(pos);
-            //agent.SetDestination(waypoints[currentWaypoint].transform.position);
+            //rb.MovePosition(pos);
+            agent.SetDestination(waypoints[currentWaypoint].transform.position);
 
             if (lastTime < 1)
             {
