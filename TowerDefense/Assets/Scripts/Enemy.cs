@@ -2,24 +2,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
     [Min(5)]
     private float enemyHealth;
+
     [SerializeField]
     [Min(5)]
     private int moveSpeed;
-    Rigidbody rb;
+
     [SerializeField]
     GameObject[] waypoints;
+
     private int currentWaypoint = 0;
     float lastTime = 0;
+    Rigidbody rb;
+    NavMeshAgent agent;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
@@ -30,6 +37,7 @@ public class Enemy : MonoBehaviour
         {
             Vector3 pos = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, moveSpeed * Time.deltaTime);
             rb.MovePosition(pos);
+            //agent.SetDestination(waypoints[currentWaypoint].transform.position);
 
             if (lastTime < 1)
             {
