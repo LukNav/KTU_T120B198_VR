@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
         lastTime += Time.deltaTime;
         if (waypoints.Length > 0)
         {
-            Vector3 pos = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, moveSpeed * Time.deltaTime);
+            //Vector3 pos = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, moveSpeed * Time.deltaTime);
             //rb.MovePosition(pos);
             agent.SetDestination(waypoints[currentWaypoint].transform.position);
 
@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
             }
             if (Math.Abs(gameObject.transform.position.x - waypoints[currentWaypoint].transform.position.x) < 3 && Math.Abs(gameObject.transform.position.z - waypoints[currentWaypoint].transform.position.z) < 3)
             {
-                Debug.Log($"Current waypoint is {currentWaypoint}");
+                //Debug.Log($"Current waypoint is {currentWaypoint}");
                 currentWaypoint++;
                 currentWaypoint = currentWaypoint == waypoints.Length ? currentWaypoint - 1 : currentWaypoint;
                 lastTime = 0;

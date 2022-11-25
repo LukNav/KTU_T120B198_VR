@@ -40,6 +40,8 @@ public class Weapon : MonoBehaviour
     [Min(1)]
     private int bullets;
 
+    private bool displayBullets = false;
+
     bool isShooting = false;
     float currentTime = 0;
     float lastShootTime = 0;
@@ -53,12 +55,25 @@ public class Weapon : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         SetupInteractableWeaponEvents();
         UpdateBulletsUI();
+        bulletUI.enabled = false;
     }
 
     private void SetupInteractableWeaponEvents()
     {
+        interactableWeapon.onSelectEntered.AddListener(ShowBulletUI);
+        interactableWeapon.onSelectExited.AddListener(HideBulletUI);
         interactableWeapon.onActivate.AddListener(StartShooting);
         interactableWeapon.onDeactivate.AddListener(StopShooting);
+    }
+
+    private void ShowBulletUI(XRBaseInteractor interactor)
+    {
+        bulletUI.enabled = true;
+    }
+
+    private void HideBulletUI(XRBaseInteractor interactor)
+    {
+        enabled = false;
     }
 
     private void UpdateBulletsUI()
