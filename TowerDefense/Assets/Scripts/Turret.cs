@@ -18,7 +18,7 @@ public class Turret : MonoBehaviour
 
     [SerializeField]
     [Min(1)]
-    private int fireRate;
+    private float fireRate;
 
     [SerializeField]
     [Min(1)]
@@ -40,7 +40,7 @@ public class Turret : MonoBehaviour
     void Awake()
     {
         interactableTurret = GetComponent<XRGrabInteractable>();
-        maxDistance = maxDistance ^ 2;
+        maxDistance = (int)Mathf.Pow(maxDistance,2);
         SetupInteractableWeaponEvents();
     }
 
@@ -103,6 +103,10 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
+        if(!canShoot)
+        {
+            return;
+        }
         if(currentEnemy == null)
         {
             return;

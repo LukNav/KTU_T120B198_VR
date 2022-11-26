@@ -8,14 +8,13 @@ using UnityEngine;
 public class DefendObject : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text gameOverText;
-
-    [SerializeField]
     private TMP_Text healthText;
 
     [SerializeField]
     [Min(0)]
     private int health;
+
+    Player playerScript;
 
     private void UpdateHealth()
     {
@@ -23,8 +22,8 @@ public class DefendObject : MonoBehaviour
     }
     private void Awake()
     {
-        gameOverText.enabled = false;
         UpdateHealth();
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -36,8 +35,7 @@ public class DefendObject : MonoBehaviour
         }
         if(health <= 0)
         {
-            gameOverText.enabled = true;
-            Time.timeScale = 0;
+            playerScript.GameOver();
         }
     }
 }

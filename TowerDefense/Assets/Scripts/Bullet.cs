@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
 
     [SerializeField]
     private GameObject particles;
-    private void Start()
+    void Awake()
     {
         Destroy(gameObject, 2);
     }

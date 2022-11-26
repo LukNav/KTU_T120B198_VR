@@ -5,17 +5,27 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     [SerializeField]
-    GameObject enemyPrefab;
+    private GameObject enemyPrefab;
+
+    [SerializeField]
+    private GameObject aggressiveEnemyPrefab;
+
     [SerializeField]
     [Min(1)]
-    int maxEnemyCount;
-    int currentEnemyCount;
+    private int maxEnemyCount;
+
+    private int currentEnemyCount;
+
     [SerializeField]
     [Min(1)]
-    int enemyInterval;
+    private int enemyInterval;
+
+    [SerializeField]
+    [Min(2)]
+    private int aggressiveEnemyCount;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if(maxEnemyCount > 0)
         {
@@ -25,7 +35,22 @@ public class EnemySpawn : MonoBehaviour
 
     void SpawnEnemy()
     {
-        var newEnemy = Instantiate(enemyPrefab, gameObject.transform);
+        if(maxEnemyCount > 1)
+        {
+            switch (currentEnemyCount % aggressiveEnemyCount == 0 && aggressiveEnemyCount > 1)
+            {
+                case false:
+                    Instantiate(enemyPrefab, gameObject.transform);
+                    break;
+                case true:
+                    Instantiate(aggressiveEnemyPrefab, gameObject.transform);
+                    break;
+            }
+        }
+        else
+        {
+            Instantiate(enemyPrefab, gameObject.transform);
+        }
         currentEnemyCount++;
         if(currentEnemyCount < maxEnemyCount)
             Invoke("SpawnEnemy", enemyInterval);

@@ -20,12 +20,10 @@ public class Enemy : MonoBehaviour
 
     private int currentWaypoint = 0;
     float lastTime = 0;
-    Rigidbody rb;
     NavMeshAgent agent;
 
-    private void Start()
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
     }
 

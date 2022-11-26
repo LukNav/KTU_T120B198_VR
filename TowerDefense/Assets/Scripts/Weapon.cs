@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
 
     [SerializeField]
     [Min(1)]
-    private int fireRate;
+    private float fireRate;
 
     [SerializeField]
     [Min(1)]
