@@ -142,4 +142,12 @@ public class Weapon : MonoBehaviour
             
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bullets")
+        {
+            bullets += collision.gameObject.GetComponent<Bullets>().BulletCount;
+            Destroy(collision.gameObject);
+        }
+    }
 }
