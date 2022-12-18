@@ -186,6 +186,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 3987043186888263538}
   bulletPrefab: {fileID: 6285148871957686384, guid: 687da2d09adf012489a7b6349bb19903,
     type: 3}
+  bulletAudio: {fileID: 8300000, guid: f1f8e205adbdf404aa0e29781d235412, type: 3}
   enemyHealth: 50
   shootingForce: 20
   damage: 1

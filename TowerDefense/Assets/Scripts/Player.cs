@@ -9,10 +9,14 @@ public class Player : MonoBehaviour
     private TMP_Text gameOverText;
 
     [SerializeField]
+    private TMP_Text playerHealthText;
+
+    [SerializeField]
     private float playerHealth;
 
     private void Awake()
     {
+        updateHealth();
         gameOverText.enabled = false;
     }
     private void OnCollisionEnter(Collision collision)
@@ -20,6 +24,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             playerHealth -= collision.gameObject.GetComponent<Bullet>().Damage;
+            updateHealth();
             if (playerHealth <= 0)
             {
                 GameOver();
@@ -30,5 +35,9 @@ public class Player : MonoBehaviour
     {
         gameOverText.enabled = true;
         Time.timeScale = 0;
+    }
+    private void updateHealth()
+    {
+        playerHealthText.text = "Your health: " + playerHealth;
     }
 }

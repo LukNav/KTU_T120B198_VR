@@ -241,6 +241,7 @@ MonoBehaviour:
     type: 3}
   bulletSpawn: {fileID: 4081063110170552885}
   bulletUI: {fileID: 2118179927132590860}
+  bulletAudio: {fileID: 8300000, guid: f1f8e205adbdf404aa0e29781d235412, type: 3}
   shootingForce: 50
   recoilForce: 1
   damage: 10

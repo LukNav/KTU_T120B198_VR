@@ -14,6 +14,9 @@ public class EnemyAttacker : MonoBehaviour
     private GameObject bulletPrefab;
 
     [SerializeField]
+    private AudioClip bulletAudio;
+
+    [SerializeField]
     [Min(5)]
     private float enemyHealth;
 
@@ -84,6 +87,8 @@ public class EnemyAttacker : MonoBehaviour
             GameObject projectileInstance = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
             projectileInstance.GetComponent<Bullet>().Damage = this.damage;
             projectileInstance.GetComponent<Rigidbody>().velocity = transform.forward * shootingForce;
+            //shooting sound
+            AudioSource.PlayClipAtPoint(bulletAudio, bulletSpawn.position);
 
             lastTime = currentTime;
         }

@@ -19,6 +19,9 @@ public class Weapon : MonoBehaviour
     private TextMeshProUGUI bulletUI;
 
     [SerializeField]
+    private AudioClip bulletAudio;
+
+    [SerializeField]
     [Min(10)]
     protected float shootingForce;
 
@@ -103,6 +106,7 @@ public class Weapon : MonoBehaviour
     private void Shoot()
     {
         //shoot sound
+        AudioSource.PlayClipAtPoint(bulletAudio, bulletSpawn.position);
 
         //recoil
         rigidBody.AddRelativeForce(Vector3.back * recoilForce, ForceMode.Impulse);

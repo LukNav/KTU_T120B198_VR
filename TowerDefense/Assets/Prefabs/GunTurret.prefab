@@ -121,6 +121,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 3454439900280590302}
   bulletPrefab: {fileID: 6285148871957686384, guid: 687da2d09adf012489a7b6349bb19903,
     type: 3}
+  bulletSound: {fileID: 0}
   maxDistance: 500
   fireRate: 10
   shootingForce: 50
@@ -453,6 +454,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 3454439900280590302}
   bulletPrefab: {fileID: 6285148871957686384, guid: 687da2d09adf012489a7b6349bb19903,
     type: 3}
+  bulletSound: {fileID: 8300000, guid: f1f8e205adbdf404aa0e29781d235412, type: 3}
   maxDistance: 50
   fireRate: 10
   shootingForce: 20

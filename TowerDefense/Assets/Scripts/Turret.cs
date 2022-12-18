@@ -13,6 +13,9 @@ public class Turret : MonoBehaviour
     private GameObject bulletPrefab;
 
     [SerializeField]
+    private AudioClip bulletSound;
+
+    [SerializeField]
     [Min(1)]
     private int maxDistance;
 
@@ -117,6 +120,7 @@ public class Turret : MonoBehaviour
             GameObject projectileInstance = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
             projectileInstance.GetComponent<Bullet>().Damage = this.damage;
             projectileInstance.GetComponent<Rigidbody>().velocity = transform.forward * shootingForce;
+            AudioSource.PlayClipAtPoint(bulletSound, bulletSpawn.position);
 
             lastShootTime = currentTime;
         }
