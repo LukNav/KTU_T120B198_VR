@@ -152,6 +152,7 @@ public class Weapon : MonoBehaviour
         {
             bullets += collision.gameObject.GetComponent<Bullets>().BulletCount;
             Destroy(collision.gameObject);
+            UpdateBulletsUI();
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,10 +21,11 @@ public class EnemyWaveController : MonoBehaviour
 
     public delegate void OnStartWaveDelegate(WaveSettings waveSettings);
     public static OnStartWaveDelegate onStartWave;
+    private Coroutine coroutine;
 
     private void Awake()
     {
-        StartCoroutine(NotifySpawners());
+        coroutine = StartCoroutine(NotifySpawners());
     }
 
     private IEnumerator NotifySpawners()
@@ -37,5 +39,10 @@ public class EnemyWaveController : MonoBehaviour
             yield return NotifySpawners();
 
         yield return null;
+    }
+
+    private void OnDestroy()
+    {
+        StopCoroutine(coroutine);
     }
 }

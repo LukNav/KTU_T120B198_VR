@@ -15,6 +15,8 @@ public class Turret : MonoBehaviour
     [SerializeField]
     private AudioClip bulletSound;
 
+    [SerializeField] private XRGrabInteractable grab;
+
     [SerializeField]
     [Min(1)]
     private int maxDistance;
@@ -42,15 +44,15 @@ public class Turret : MonoBehaviour
 
     void Awake()
     {
-        interactableTurret = GetComponent<XRGrabInteractable>();
+        interactableTurret = grab;
         maxDistance = (int)Mathf.Pow(maxDistance,2);
         SetupInteractableWeaponEvents();
     }
 
     private void SetupInteractableWeaponEvents()
     {
-        interactableTurret.onSelectEntered.AddListener(SetAbleToShoot);
-        interactableTurret.onSelectExited.AddListener(SetUnableToShoot);
+        interactableTurret.onSelectEntered.AddListener(SetUnableToShoot);
+        interactableTurret.onSelectExited.AddListener(SetAbleToShoot);
     }
 
     private void SetAbleToShoot(XRBaseInteractor interactor)

@@ -86,7 +86,7 @@ public class EnemyAttacker : MonoBehaviour
             Debug.Log("good with firerate");
             GameObject projectileInstance = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
             projectileInstance.GetComponent<Bullet>().Damage = this.damage;
-            projectileInstance.GetComponent<Rigidbody>().velocity = transform.forward * shootingForce;
+            projectileInstance.GetComponent<Rigidbody>().velocity = (player.transform.position - bulletSpawn.position).normalized  * shootingForce;
             //shooting sound
             AudioSource.PlayClipAtPoint(bulletAudio, bulletSpawn.position);
 

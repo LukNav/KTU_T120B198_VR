@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Search;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     [SerializeField]
     private TMP_Text gameOverText;
+    
+    [SerializeField]
+    private Button mainMenuButton;
 
     [SerializeField]
     private TMP_Text playerHealthText;
@@ -20,6 +25,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         updateHealth();
+        mainMenuButton.gameObject.SetActive(false);
         gameOverText.enabled = false;
         onPlayersDeath+=GameOver;
     }
@@ -38,6 +44,7 @@ public class Player : MonoBehaviour
     public void GameOver()
     {
         gameOverText.enabled = true;
+        mainMenuButton.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
     private void updateHealth()
