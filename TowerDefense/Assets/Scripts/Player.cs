@@ -14,20 +14,24 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float playerHealth;
 
+    public delegate void OnPlayersDeathDelegate();
+    public static OnPlayersDeathDelegate onPlayersDeath;
+
     private void Awake()
     {
         updateHealth();
         gameOverText.enabled = false;
+        onPlayersDeath+=GameOver;
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet" && playerHealth > 0)//If player is hit by bullet and is not dead
         {
             playerHealth -= collision.gameObject.GetComponent<Bullet>().Damage;
             updateHealth();
             if (playerHealth <= 0)
             {
-                GameOver();
+                onPlayersDeath();
             }
         }
     }
