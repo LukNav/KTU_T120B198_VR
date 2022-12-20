@@ -18,7 +18,7 @@ public class DefendObject : MonoBehaviour
 
     private void UpdateHealth()
     {
-        healthText.text = "Bomb health: " + health;
+        healthText.text = "CPU health: " + health;
     }
     private void Awake()
     {
